@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Configurações do Verificador de VPN</title>
+  <link rel="stylesheet" type="text/css" href="options.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <h1>Configurações do Verificador de VPN</h1>
+  <label for="vpnIp">IP atual:</label>
+  <input type="text" id="vpnIp" />
+
+  <br><br>
+
+  <label>
+    <input type="checkbox" id="alertCheckbox"> Exibir alerta de VPN ativada
+  </label>
+  <label>
+    <input type="checkbox" id="updateIPCheckbox"> Atualizar IP automaticamente
+  </label>
+
+  <br>
+
+  <button id="getAndSaveIp">Obter IP Atual</button>
+  <button id="save">Salvar</button>
+
+  <script src="options.js"></script>
+</body>
+
+</html>
