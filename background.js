@@ -12,11 +12,18 @@ async function obterIP() {
   }
 }
 
+chrome.runtime.onStartup.addListener(function () {
+  ipAtual = obterIP();
+});
+
 chrome.webNavigation.onCompleted.addListener(async function (details) {
   chrome.storage.sync.get(["updateIPAutomatically"], async function (result) {
     if (result.updateIPAutomatically) {
       ipAtual = await obterIP();
     }
+    // else if (ipAtual === "") {
+    //     ipAtual = await obterIP();
+    // }
     chrome.storage.sync.get(["ipVpn"], function (result) {
       ipVpn = result.ipVpn || "";
       verificarVPN(ipAtual, ipVpn, details);
